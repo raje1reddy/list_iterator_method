@@ -1,23 +1,43 @@
+// Java program to demonstrate
+// listIterator() method
+// for String value
 
-import java.util.ListIterator;
-import java.util.ListResourceBundle;
-import java.util.Scanner;
-import java.util.ArrayList;
-//code for how to use a ListIterator to loop through all the values of an  array list
-public class ArrayListIteratorTest {
-    public static void main(String[] args){
-        ArrayList<String> myArrlist = new ArrayList<String>();
-        myArrlist.add("one");
-        myArrlist.add("two");
-        myArrlist.add("four");
-        myArrlist.add(2, "three");
-        //Get the iterator
-        ListIterator<String> iterator = myArrlist.listIterator();
-        //Use hasNext() to check whether more elements exist
-        while (iterator.hasNext()){
-            System.out.println(iterator.next()); //call next() to get the next item from itwrator
+import java.util.*;
+
+public class ListIteratorTest {
+    public static void main(String[] argv) throws Exception
+    {
+        try {
+
+            // Creating object of ArrayList<Integer>
+            ArrayList<String>
+                    arrlist = new ArrayList<String>();
+
+            // adding element to arrlist
+            arrlist.add("A");
+            arrlist.add("B");
+            arrlist.add("C");
+            arrlist.add("D");
+
+            // print arrlist
+            System.out.println("ArrayList: "
+                    + arrlist);
+
+            // Creating object of ListIterator<String>
+            // using listIterator() method
+            ListIterator<String>
+                    iterator = arrlist.listIterator();
+
+            // Printing the iterated value
+            System.out.println("\nUsing ListIterator:\n");
+            while (iterator.hasNext()) {
+                System.out.println("Value is : "
+                        + iterator.next());
+            }
         }
 
+        catch (NullPointerException e) {
+            System.out.println("Exception thrown : " + e);
+        }
     }
 }
-
